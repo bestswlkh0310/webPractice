@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <style>
+        body {
+            background-color: #fbfbfb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            background-color: #fff;
+            border: 0.07rem solid #aaa;
+            text-align: center;
+            width: 30rem;
+            height: 35rem;
+            position: relative;
+
+        }
+
+        form * {
+            display: block;
+            margin: 0 auto;
+            margin-top: 0.3rem;
+            width: 16rem;
+            height: 2.4rem;
+            border-radius: 0.3rem;
+            outline: none;
+        }
+
+        .input {
+            border: 0.04rem solid #aaa;
+            padding-left: 0.65rem;
+            background-color: #fbfbfb;
+        }
+
+        .input:focus {
+            border: 0.06rem solid #999;
+        }
+
+        .input:nth-child(1) {
+            margin-top: 3rem;
+        }
+
+        .main img {
+            width: 15rem;
+            margin-top: 5rem;
+        }
+
+        .submit:disabled {
+            opacity: 0.5;
+        }
+
+        .submit {
+            opacity: 1;
+            background-color: #00a5f1;
+            border: 0;
+            color: white;
+            margin-top: 1rem;
+        }
+
+        .submit:disabled:hover {
+            cursor: default;
+        }
+        .submit:hover {
+            cursor: pointer;
+        }
+
+
+        span, a {
+            font-size: 14px;
+        }
+
+        span {
+            position: absolute;
+            display: block;
+            width: 100%;
+            text-align: center;
+            bottom: 0%;
+            margin-bottom: 1.4rem;
+        }
+
+        a {
+            color: #0d57c6;
+            text-decoration: none;
+        }
+
+        hr {
+            display: inline-block;
+            width: 5.8rem;
+            height: 1px;
+            border : 0px;
+            border-top: 1px solid #aaa;
+            padding-top: 5px;
+            margin: 0px 15px 0px 15px;
+        }
+
+        #or {
+            margin-top: 1rem;
+            height: 10rem;
+        }
+        
+        hr + div {
+            font-size: small;
+            color: #999;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <img src="insta_logo.png" alt="인스타그램">
+        <form id="inputForm" action="login">
+            <input id="id" class="input" name="nickname" type="text" placeholder="전화번호, 사용자 이름 또는 이메일">
+            <input id="pw" class="input" name="password" type="text" placeholder="비밀번호">
+            <input id="submit" class="submit" type="submit" value="로그인" disabled>
+        </form>
+        <div id="or">
+            <hr>
+            <div>또는</div>
+            <hr>
+        </div>
+        <span>계정이 없으신가요? <a href="join">가입하기</a></span>
+    </div>
+</body>
+</html>
+
+
+<script>
+    const inputId = document.getElementById("id");
+    const inputPw = document.getElementById("pw");
+    var isIdInput = false;
+    var isPwInput = false;
+    inputId.addEventListener("input", (e) => {
+        const v = e.target.value;
+        isIdInput = (v !== "")
+        reload()
+
+    })
+    inputPw.addEventListener("input", (e) => {
+        const v = e.target.value;
+        isPwInput = (v !== "")
+        reload()
+    })
+
+    const reload = () => {
+        const submit = document.getElementById("submit");
+        console.log(isPwInput && isIdInput);
+        submit.disabled = !(isPwInput && isIdInput);
+    }
+</script>
