@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <style>
+        .wrapper {
+            font-size: 0;
+        }
+        .inline-block {
+            display: inline-block;
+            vertical-align: middle;
+            border: 3px solid #737373;
+            font-size: 16px;
+        }
+
+        .box1 {
+            width: 300px;
+            height: 70px;
+            opacity: 1;
+            transition: opacity 0.3s;
+            background-color: antiquewhite;
+        }
+
+        .box2 {
+            width: 300px;
+            height: 150px;
+            opacity: 0.1;
+            background-color: springgreen;
+            transition: opacity 0.3s;
+        }
+
+        .box1:hover {
+            opacity: 0.1;
+        }
+
+        .box2:hover {
+            opacity: 1.0;
+        }
+
+        .pointer:hover {
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="inline-block box1 pointer">inline-block height 70px</div>
+    <div class="inline-block box2">inline-block height 150px</div>
+
+    <div class="wrapper">
+        <div class="inline-block box1 pointer">inline-block height 70px</div>
+        <div class="inline-block box2">inline-block height 150px</div>
+    </div>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, *:before, *:after {
+            margin: 0;
+            box-sizing: border-box;
+        }
+        span {
+            background-color: red;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My <span>Important</span> Heading</h1>
+    <span>Inline</span>
+    <span>Inline</span><span>Inline</span>
+</body>
+</html> -->
