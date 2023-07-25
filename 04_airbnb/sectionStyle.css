@@ -1,0 +1,28 @@
+section {
+    width: 100%;
+}
+
+section table {
+    overflow-y: scroll;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+section td img {
+    width: 260px;
+    height: 260px;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+section td div:nth-child(3), section td div :nth-child(4) {
+    color: #999;
+}
+
+section td div {
+    margin-left: 10px;
+}
+
+section table td img {
+    cursor: pointer;
+}

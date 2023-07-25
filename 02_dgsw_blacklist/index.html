@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="root">
+        <div id="title">Dgsw BlackList</div>
+        <div id="container">
+            <div>
+                <input id="inputText" class="clsInput" type="text" placeholder="이름을 입력하세요">
+                <br>
+                <input class="clsInput" type="submit" value="등록" onclick="register()" onSubmit="return false;">
+            </div>
+            <div id="main">
+                <ul id="blackList">
+                    <li class="black" onclick="checkBlack(event)">
+                        <span>asdadasd</span>
+                        <input class="checkbox" type="checkbox">
+                    </li>
+                </ul>
+                <div id="btnContainer">
+                    <input id="btnDelete" type="button" value="Delete All" onclick="deleteAll()" onSubmit="return false;">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script src="./script.js"></script>

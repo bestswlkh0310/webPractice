@@ -1,0 +1,50 @@
+* { box-sizing: border-box; }
+body { margin: 0px; }
+
+#root {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+}
+
+#title {
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+
+#main {
+    width: 50vw;
+    height: 30vh;
+    background-color: rgb(255, 0, 0);
+    border-radius: 10px;
+}
+
+#input {
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.clsInp {
+    width: 100%;
+    padding: 10px;
+    margin: 0.3vh 0px;
+    border-radius: 100px;
+    border: none;
+}
+
+.clsInp:focus {
+    outline: 2px solid #000;
+}
+
+#submit {
+    background-color: white;
+    outline: none;
+}
+
+#submit:active {
+    background-color: #eeeeee;
+}

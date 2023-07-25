@@ -1,0 +1,25 @@
+nav {
+    margin-right: 30px;
+    margin-top: 20px;
+}
+nav > ul > li {
+    list-style: none;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    cursor: pointer;
+}
+
+nav > ul > li > img {
+    width: 22px;
+    height: 22px;
+}
+
+nav > ul > li > div {
+    margin-top: 1px;
+    font-size: 13px;
+}
+
+nav > ul {
+    display: flex;
+}

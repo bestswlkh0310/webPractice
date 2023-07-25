@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#root {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#title {
+    margin-top: 30px;
+    color: white;
+    font-size: 30px;
+}
+
+#inputText {
+    margin-top: 20px;
+}
+
+#inputText:focus {
+    outline: 0;
+}
+
+.clsInput {
+    width: 100%;
+    padding: 7px;
+    margin: 2px;
+    border-radius: 6px;
+    border: none;
+}
+
+#main {
+    width: 300px;
+    height: 500px;
+    border-radius: 6px;
+    background-color: white;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#blackList {
+    width: 300px;
+    padding: 10px;
+    margin-top: 3px;
+}
+
+
+
+.black:hover {
+    background-color: #ddd;
+    cursor: pointer;
+}
+.black:active {
+    background-color: #ccc;
+}
+
+.black {
+    display: flex;
+    align-items: center;
+    background-color: #eee;
+    border-radius: 10px;
+    padding: 10px 10px 10px 13px;
+    margin-bottom: 3px;
+    color: black;
+    list-style-type: none;
+    text-align: left;
+}
+
+.checkbox {
+    margin-left: auto;
+    width: 18px;
+    height: 18px;
+}
+
+.checkbox:checked {
+    border: none;
+}
+
+#btnDelete {
+    float: right;
+    margin-right: 10px;
+    border: none;
+    background-color: #eee;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+#btnDelete:hover {
+    background-color: #ddd;
+}
+
+#btnDelete:active {
+    background-color: #ccc;
+}
+
+#btnContainer {
+    justify-content: flex-end;
+    margin-bottom: 13px;
+}
