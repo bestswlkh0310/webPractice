@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.clsTodoList {
+    background-color: aqua;
+    width: 40vh;
+    height: 20vh;
+}
+
+.clsTodoListView {
+    height: 100%;
+    background-color: aquamarine;
+    overflow-y: scroll;
+}
+
+.clsTitle {
+    text-align: center;
+}
+
+.clsInputLabel {
+    width: 70px;
+    display: inline-block;
+}
+
+.clsInput {
+    margin-bottom: 10px;
+}
+
+.clsContent {
+    outline: none;
+    width: 24vh;
+    height: 4vh;
+}
+
+.clsInputContainer {
+    text-align: center;
+}
+
+.clsButtonContainer {
+    text-align: center;
+}
+
+.clsButton {
+    background-color: rgb(224, 224, 224);
+}

@@ -115,20 +115,29 @@
             color: #999;
             display: inline-block;
         }
+
+        #warning {
+            display: block;
+            color: red;
+            font-size: 12px;
+            margin-top: 1rem;
+        }
     </style>
 </head>
 <body>
     <div class="main">
         <img src="insta_logo.png" alt="인스타그램">
-        <form id="inputForm" action="login">
+        <form id="inputForm" action="login" onsubmit="return false;">
             <input id="id" class="input" name="nickname" type="text" placeholder="전화번호, 사용자 이름 또는 이메일">
             <input id="pw" class="input" name="password" type="text" placeholder="비밀번호">
-            <input id="submit" class="submit" type="submit" value="로그인" disabled>
+            <input id="submit" class="submit" type="submit" value="로그인" disabled >
         </form>
         <div id="or">
             <hr>
             <div>또는</div>
             <hr>
+            <br>
+            <div id="warning">올바른 아이디 또는 비밀번호를 입력해주세요</div>
         </div>
         <span>계정이 없으신가요? <a href="join">가입하기</a></span>
     </div>
@@ -139,6 +148,10 @@
 <script>
     const inputId = document.getElementById("id");
     const inputPw = document.getElementById("pw");
+    const submit = document.getElementById("submit");
+    const form = document.getElementById("inputForm");
+    const warning = document.getElementById("warning");
+
     var isIdInput = false;
     var isPwInput = false;
     inputId.addEventListener("input", (e) => {
@@ -154,8 +167,19 @@
     })
 
     const reload = () => {
-        const submit = document.getElementById("submit");
+        warning.style.display = "none"
         console.log(isPwInput && isIdInput);
         submit.disabled = !(isPwInput && isIdInput);
     }
+    
+    form.addEventListener('submit', () => {
+        const id = inputId.value;
+        const pw = inputPw.value;
+        if (!pw.match( /(?=.*\d)(?=.*[a-z]).{8,}/ ) || !id.match(/^[A-Za-z][A-Za-z0-9]*$/)) {
+            console.log("올바른 비번입력하셈");
+            warning.style.display = "block"
+        }
+        console.log(`${id} ${pw}`)
+    })
+
 </script>
