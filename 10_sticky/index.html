@@ -28,6 +28,7 @@
             position: sticky;
             background-color: #333;
             color: white;
+            z-index: 1;
         }
         .active {
             background-color: rgb(10, 187, 25);
@@ -43,7 +44,7 @@
         }
 
         #list li:hover:not(.active) {
-                background-color: black;
+            background-color: black;
         }
 
         #list li {
@@ -51,7 +52,7 @@
             padding: 6px 12px 6px 12px;
         }
 
-        #list a {
+        #list li > a {
             color: white;
             text-decoration: none;
         }
@@ -64,10 +65,32 @@
             text-align: justify;
         }
         @media screen and (max-width: 400px) {
-            #list, 
+            #list,
             #list li {display: block;}
         }
 
+        .more:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            display: none;
+            margin-left: -12px;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 6px 50px 6px 6px;
+            background-color: #f1f1f1;
+            color: #333;
+            text-decoration: none;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ccc;
+        }
     </style>
 </head>
 <body>
@@ -82,6 +105,14 @@
                 <li><a href="">뉴스</a></li>
                 <li><a href="">실시간</a></li>
                 <li><a href="">프로필</a></li>
+                <li class="more">
+                    <a href="">더보기</a>
+                    <div class="dropdown-content">
+                        <a href="#">뭘</a>
+                        <a href="#">봐</a>
+                        <a href="#">죄송합니다</a>
+                      </div>
+                </li>
             </ul>
         </div>
     </nav>
