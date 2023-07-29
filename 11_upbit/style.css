@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+#root > * {
+    min-width: 1500px;
 }
 
 nav {
@@ -12,7 +17,12 @@ nav {
     top: 0;
 }
 
+.nav1 {
+    min-width: 600px;
+}
+
 .nav2 {
+    min-width: 300px;
     margin-left: auto;
 }
 
@@ -49,8 +59,8 @@ nav ul li a {
     display: none;
     position: absolute;
     background-color: white;
-    width: 18rem;
-    height: 15rem;
+    width: 3rem;
+    height: 10rem;
     z-index: 1;
     border: 1px solid #ccc;
     right: 10rem;
@@ -62,21 +72,24 @@ main {
     background-color: #eff0f3;
     height: 200vh;
     padding: 1rem 10rem 0 10rem;
+    display: flex;
+}
+
+@media screen and (max-width: 1600px) {
+    main {
+        padding: 1rem 2rem 0 0;
+    }
 }
 
 .main {
     float: left;
-    width: 70%;
+    width: 1000px;
+    min-width: 1000px;
 }
 
 .main * {
     width: 100%;
     background-color: white;
-}
-
-.list {
-    float: right;
-    width: 30%;
 }
 
 .alert {
@@ -98,20 +111,28 @@ main {
 
 .graph {
     margin-top: 0.6rem;
-    height: 100rem;
 }
 
 .bottomBar {
     border-bottom: 1.5px solid #eee;
 }
 
+.coinInfo {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+.coinTitle {
+    font-size: 1.2rem;
+}
+
 .port {
     display: flex;
     align-items: center;
-    height: 2.5rem;
+    height: 2.8rem;
 }
 
-.port * {
+.port * :not(.coinInfo){
     font-size: 1.2rem;
 }
 
@@ -129,12 +150,15 @@ main {
 .detailSelector {
     display: flex;
     justify-content: right;
+    height: 100%;
 }
 
 .detailSelector * {
     width: 8rem;
     font-weight: 700;
     text-align: center;
+    height: 100%;
+    padding-top: 0.5rem;
 }
 
 .activeDetail {
@@ -143,5 +167,143 @@ main {
 }
 
 .info {
-    height: 8rem;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+}
+
+.info img {
+    width: 160px;
+}
+
+.list {
+    min-width: 400px;
+}
+
+.list > * {
+    background-color: white;
+    margin-left: 1rem;
+}
+
+.search {
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.search form {
+    width: 100%;
+    height: 100%;
+}
+
+.search .coinSearch {
+    margin-left: 10px;
+    width: 95%;
+    height: 100%;
+    border: none;
+}
+
+.search a {
+    height: 100%;
+    margin-top: 10px;
+    background: url(https://cdn.upbit.com/upbit-web/images/bg.feb3506.png) -90px 0 no-repeat;
+    color: transparent;
+}
+
+.searchInfo {
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.searchInfo ul {
+    list-style: none;
+    height: 100%;
+    display: flex;
+}
+
+.searchInfo ul li {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchInfo ul li a {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 10px;
+    text-decoration: none;
+}
+
+.searchInfo ul li a:not(.activeSel) {
+    color: black;
+}
+
+.activeSel {
+    color: rgb(9, 54, 135);
+    border-bottom: 2px solid rgb(9, 54, 135);
+}
+
+.sort {
+    background-color: #fafafa;
+    width: 100%;
+}
+
+.sort ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 3px 0 3px 0;
+}
+
+.sort ul li a {
+    text-decoration: none;
+    color: #888;
+    font-size: 12px;
+}
+
+.coinList {
+    width: 100%;
+    height: 100rem;
+    overflow-y: scroll
+}
+.coinList table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.coinList tbody div {
+    display: flex;
+}
+.coinList tbody {
+    width: 100%;
+}
+
+.coin {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.2rem 0 0.2rem 0;
+}
+
+.coin * :not(.low) {
+    font-size: 12px;
+}
+
+.up td:nth-child(2) span, .up td:nth-child(3) {
+    color: rgb(196, 4, 4);
+}
+
+.down td:nth-child(2) span, .down td:nth-child(3) {
+    color: rgb(7, 96, 221);
+}
+
+.low {
+    font-size: 10px;
+    color: #888;
 }
