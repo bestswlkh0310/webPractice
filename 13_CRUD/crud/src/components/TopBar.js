@@ -2,13 +2,20 @@ import Search from "./Search"
 import { useState } from "react"
 import SearchDetail from "./SearchDetail"
 import styled from "styled-components";
+import axios from "axios"
 
-export default function TopBar() {
+export default function TopBar({updateSearchResult}) {
 
     const [searchText, setSearchText] = useState("사과")
 
     const updateSearchText = (e) => { setSearchText(e.target.value) }
-    const submitSearch = () => {}
+    const submitSearch = () => {
+        axios.get(`http://localhost:3001/get/${searchText}`)
+        .then((response) => {
+            console.log(response)
+            updateSearchResult(response.data)
+        })
+    }
 
     return (
         <Nav className="topBar">
