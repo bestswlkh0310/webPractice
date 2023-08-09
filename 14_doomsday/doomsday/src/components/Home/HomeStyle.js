@@ -15,3 +15,9 @@ export const TitleContainer = styled.div`
 export const ClockContainer = styled.div`
     text-align: center;
 `
+
+export const PopUpContainer = styled.div`
+    position: absolute;
+    left: 50%;
+    bottom: 0%;
+`;
