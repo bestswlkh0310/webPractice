@@ -5,9 +5,7 @@ export default function SearchResultSection({searchResult}) {
     console.log(searchResult)
     return (
         <Container>
-            <Ul>
-                {searchResult.map(item => (<SearchResultItem item={item}/>))}
-            </Ul>
+            {searchResult.map(item => (<SearchResultItem item={item}/>))}
         </Container>
     )
 }

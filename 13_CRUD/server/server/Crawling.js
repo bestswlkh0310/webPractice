@@ -20,13 +20,15 @@ const extractSearchResults = (html) => {
 
     const searchResults = [];
     $('img').each((index, element) => {
-        const title = $(element).text();
-        const link = $(element).attr('href');
         const result = element.attribs.src
         if (result.slice(0, 15) === "https://encrypt") {
             searchResults.push(result);
         }
     });
 
-    return searchResults.slice(0, 10);
+    if (searchResults.length >= 100) {
+        return searchResults.slice(0, 100);
+    } else {
+        return searchResults.slice(0, searchResults.length - 1)
+    }
 }
