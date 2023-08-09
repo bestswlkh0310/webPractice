@@ -9,7 +9,6 @@ const [position, setPosition] = useState(-100);
 const [goingUp, setGoingUp] = useState(true);
 
 useEffect(() => {
-    console.log(position)
     const timer = setInterval(() => {
     if (goingUp) {
         setPosition(prevPosition => prevPosition - 100);

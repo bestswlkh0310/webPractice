@@ -2,10 +2,9 @@ import { styled } from 'styled-components';
 
 export const HomeStyle = styled.div`
     display: inline-block;
-    width: 1000px;
+    width: 1200px;
     height: 750px;
-    border-radius: 15px;
-    background-color: #F62424;
+    border: 2px solid white;
 `
 
 export const TitleContainer = styled.div`
@@ -17,7 +16,14 @@ export const ClockContainer = styled.div`
 `
 
 export const PopUpContainer = styled.div`
-    position: absolute;
-    left: 50%;
     bottom: 0%;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    overflow-y: hidden;
+    text-align: center;
 `;
+
+export const WeatherContainer = styled.div`
+    margin: 20px;
+`

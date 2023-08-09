@@ -1,7 +1,6 @@
 import { styled } from 'styled-components';
 import { keyframes } from "styled-components";
 
-// Define the fadeOut animation
 const fadeOut = keyframes`
   from {
     opacity: 1;
@@ -16,9 +15,11 @@ export const PopUpContainer = styled.div`
   position: absolute;
   left: ${props => props.left || '500px'};
   transform: translateX(-50%);
-  width: 200px;
+  width: 400px;
   height: 100px;
-  background: blue;
+  background: black;
+  border: 2px solid white;
+  text-align: center;
   color: white;
   display: flex;
   justify-content: center;

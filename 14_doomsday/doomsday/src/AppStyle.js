@@ -6,4 +6,5 @@ export const AppContainer = styled.div`
     justify-content: center;
     height: 100vh;
     background-color: black;
+    flex-direction: column;
 `

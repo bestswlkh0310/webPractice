@@ -4,6 +4,7 @@ import Clock from "../Clock/Clock.js"
 import { calculateDeadTime } from "../../utils/CalculatorClock.js"
 import { useEffect, useState } from "react";
 import PopUp from "../PopUp/PopUp.js"
+import Weather from "../Weather/Weather.js"
 
 export default function Home() {
     const [deadline, setDeadline] = useState("")
@@ -16,7 +17,7 @@ export default function Home() {
                 
             const newPopUp = {
                 id: Date.now(),
-                left: `${Math.random() * 1500 - 750}px`
+                left: `${Math.random() * 1500}px`
              };
             setPopUps(prevPopUps => [...prevPopUps, newPopUp]);
             setPopUps(prevPopUps => prevPopUps.filter(popUp => Date.now() - popUp.id < 2100));
@@ -26,18 +27,23 @@ export default function Home() {
     }, []);
 
     return (
-        <S.HomeStyle>
-            <S.TitleContainer>
-                <Title text={"지구는 지금?"}/>
-            </S.TitleContainer>
-            <S.ClockContainer>
-                <Clock deadline={deadline}/>
-            </S.ClockContainer>
+        <>
+            <S.HomeStyle>
+                <S.TitleContainer>
+                    <Title color={"white"} text={"지구는 지금?"}/>
+                </S.TitleContainer>
+                <S.ClockContainer>
+                    <Clock deadline={deadline}/>
+                </S.ClockContainer>
+                <S.WeatherContainer>
+                    <Weather/>
+                </S.WeatherContainer>
+            </S.HomeStyle>
             <S.PopUpContainer>
             {popUps.map(popUp => (
                     <PopUp key={popUp.id} left={popUp.left} />
                 ))}
             </S.PopUpContainer>
-        </S.HomeStyle>
+        </>
     )
 }
