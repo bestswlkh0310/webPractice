@@ -11,7 +11,7 @@ const fadeOut = keyframes`
 `;
 
 
-export const PopUpContainer = styled.div`
+export const PopUpContainer = styled.div<{left: string, show: boolean}>`
   position: absolute;
   left: ${props => props.left || '500px'};
   transform: translateX(-50%);

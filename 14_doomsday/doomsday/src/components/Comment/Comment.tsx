@@ -1,6 +1,6 @@
-import Title from "../Title/Title.js"
-import AddComment from "./AddCommnet/AddComment.js"
-import * as S from "./CommentStyle.js"
+import Title from "../Title/Title"
+import AddComment from "./AddCommnet/AddComment"
+import * as S from "./CommentStyle"
 
 export default function Comment() {
     return (

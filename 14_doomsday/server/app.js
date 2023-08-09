@@ -15,7 +15,8 @@ const connection = mysql2.createConnection({
 
 function addComment(data) {
     const { author, comment, feel } = data
-    connection.query('INSERT INTO comment (author, comment, feel) values (?, ?, ?)', [author, comment, feel])
+    const sql = 'INSERT INTO comment (author, comment, feel) values (?, ?, ?)'
+    connection.query(sql, [author, comment, feel])
 }
 
 app.get('/temp', (req, res) => {

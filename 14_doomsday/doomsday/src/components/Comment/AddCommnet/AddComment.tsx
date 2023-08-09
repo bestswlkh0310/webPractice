@@ -5,7 +5,7 @@ import { useState } from "react"
 export default function AddComment() {
 
     const [commentText, setCommentText] = useState("")
-    function updateCommentText(e) {
+    function updateCommentText(e: React.ChangeEvent<HTMLInputElement>) {
         setCommentText(e.target.value)
     }
     function commit() {

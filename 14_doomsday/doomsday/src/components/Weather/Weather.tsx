@@ -1,7 +1,7 @@
-import Title from "../Title/Title.js"
-import * as S from "./WeatherStyle.js"
+import Title from "../Title/Title"
+import * as S from "./WeatherStyle"
 import { useState, useEffect } from "react"
-import { getTemp } from "../../repositories/WeatherRepository.js"
+import { getTemp } from "../../repositories/WeatherRepository"
 
 export default function Weather() {
     const [temp, setTemp] = useState("불러오는 중..")

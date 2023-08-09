@@ -1,6 +1,5 @@
-import './AppStyle.js';
 import Home from './components/Home/Home';
-import * as S from "./AppStyle.js"
+import * as S from "./AppStyle"
 
 export default function App() {
     return (

@@ -1,8 +1,8 @@
-import Title from "../Title/Title.js";
-import * as S from "./PopUpStyle.js"
+import Title from "../Title/Title";
+import * as S from "./PopUpStyle"
 import { useEffect, useState } from "react";
 
-export default function PopUp({left}) {
+export default function PopUp({left}: {left: string}) {
 
 
 const [position, setPosition] = useState(-100);
@@ -27,7 +27,7 @@ useEffect(() => {
 }, [goingUp, position]);
     return (
         <>
-        <S.PopUpContainer left={left} style={{ bottom: `${position}px` }}>
+        <S.PopUpContainer show={true} left={left} style={{ bottom: `${position}px` }}>
             <Title color="white" text={"벌써 1초가 지났어요!!!!"}/>
         </S.PopUpContainer>
         </>

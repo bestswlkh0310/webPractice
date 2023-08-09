@@ -1,7 +1,7 @@
-import * as S from "./ClockStyle.js"
-import Title from "../Title/Title.js"
+import * as S from "./ClockStyle"
+import Title from "../Title/Title"
 
-export default function Clock({deadline}) {
+export default function Clock({deadline}: {deadline: string}) {
     return (
         <S.ClockStyle>
             <S.TitleContainer>
