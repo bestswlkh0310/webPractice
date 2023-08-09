@@ -5,6 +5,7 @@ import { calculateDeadTime } from "../../utils/CalculatorClock.js"
 import { useEffect, useState } from "react";
 import PopUp from "../PopUp/PopUp.js"
 import Weather from "../Weather/Weather.js"
+import Comment from "../Comment/Comment.js";
 
 export default function Home() {
     const [deadline, setDeadline] = useState("")
@@ -14,14 +15,12 @@ export default function Home() {
         setDeadline(calculateDeadTime())
         const timer = setInterval(() => {
             setDeadline(calculateDeadTime())
-                
             const newPopUp = {
                 id: Date.now(),
                 left: `${Math.random() * 1500}px`
              };
             setPopUps(prevPopUps => [...prevPopUps, newPopUp]);
             setPopUps(prevPopUps => prevPopUps.filter(popUp => Date.now() - popUp.id < 2100));
-
         }, 1000);
         return () => clearInterval(timer);
     }, []);
@@ -38,6 +37,9 @@ export default function Home() {
                 <S.WeatherContainer>
                     <Weather/>
                 </S.WeatherContainer>
+                <S.CommentContainer>
+                    <Comment/>
+                </S.CommentContainer>
             </S.HomeStyle>
             <S.PopUpContainer>
             {popUps.map(popUp => (
