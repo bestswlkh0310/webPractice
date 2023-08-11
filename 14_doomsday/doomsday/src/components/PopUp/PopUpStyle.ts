@@ -11,7 +11,7 @@ const fadeOut = keyframes`
 `;
 
 
-export const PopUpContainer = styled.div<{left: string, show: boolean}>`
+export const PopUpContainer = styled.div<{left: string}>`
   position: absolute;
   left: ${props => props.left || '500px'};
   transform: translateX(-50%);
@@ -25,5 +25,5 @@ export const PopUpContainer = styled.div<{left: string, show: boolean}>`
   justify-content: center;
   align-items: center;
   transition: bottom 0.5s;
-  animation: ${fadeOut} 1s ease-in-out ${props => props.show ? '0s' : '1.5s'} forwards;
+  animation: ${fadeOut} 1s ease-in-out 1.5s forwards;
 `;

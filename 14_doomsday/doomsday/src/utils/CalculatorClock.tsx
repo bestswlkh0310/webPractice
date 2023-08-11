@@ -1,8 +1,8 @@
 export function calculateDeadTime() {
-    var currentTime = new Date();
-    var targetTime = new Date("2029-09-22T21:00:00");
+    var currentTime: Date = new Date();
+    var targetTime: Date = new Date("2029-09-22T21:00:00");
     
-    var timeDifference = targetTime - currentTime;
+    var timeDifference = Number(targetTime) - Number(currentTime);
     
     var years = Math.floor(timeDifference / (365 * 24 * 60 * 60 * 1000));
     timeDifference -= years * 365 * 24 * 60 * 60 * 1000;

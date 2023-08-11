@@ -27,7 +27,7 @@ useEffect(() => {
 }, [goingUp, position]);
     return (
         <>
-        <S.PopUpContainer show={true} left={left} style={{ bottom: `${position}px` }}>
+        <S.PopUpContainer  left={left} style={{ bottom: `${position}px` }}>
             <Title color="white" text={"벌써 1초가 지났어요!!!!"}/>
         </S.PopUpContainer>
         </>
