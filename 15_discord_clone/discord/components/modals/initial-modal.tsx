@@ -1,10 +1,10 @@
 "use client"
 
-import * as z from 'zod'
+import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from "react-hook-form";
 import { useState, useEffect } from 'react';
-
+import axios from 'axios';
 import {
     Dialog,
     DialogContent,
@@ -26,6 +26,7 @@ import {
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import { FileUpload } from '@/components/file-upload';
+import {useRouter} from "next/navigation";
 
 const formSchema = z.object({
     name: z.string().min(1, {
@@ -39,6 +40,7 @@ const formSchema = z.object({
 const InitialModal = () => {
 
     const [isMounted, setIsMounted] = useState(false);
+    const router = useRouter();
     const form = useForm({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -54,6 +56,15 @@ const InitialModal = () => {
     const isLoading = form.formState.isSubmitting
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         console.log(values)
+        try {
+            await axios.post('/api/servers', values)
+
+            form.reset();
+            router.refresh();
+            window.location.reload();
+        } catch(e) {
+            console.log(e)
+        }
     }
 
     if (!isMounted) return null
@@ -65,7 +76,7 @@ const InitialModal = () => {
                         ㅎㅇㅎㅇㅎ
                     </DialogTitle>
                     <DialogDescription className="text-center text-zinc-500">
-                    어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔
+                        어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔
                     </DialogDescription>
                 </DialogHeader>
                 <Form {...form}>
@@ -73,41 +84,39 @@ const InitialModal = () => {
                         <div className='space-y-8 px-6'>
                             <div className='flex items-center justify-center text-center'>
                                 <FormField
-                                control={form.control}
-                                name="imageUrl"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormControl>
-                                            <FileUpload
-                                            endpoint="serverImage"
-                                            value={field.value}
-                                            onChange={field.onChange}
-                                            />
-                                        </FormControl>
-                                    </FormItem>
-                                )}>
-
-                                </FormField>
+                                    control={form.control}
+                                    name="imageUrl"
+                                    render={({ field }) => (
+                                        <FormItem>
+                                            <FormControl>
+                                                <FileUpload
+                                                    endpoint="serverImage"
+                                                    value={field.value}
+                                                    onChange={field.onChange}
+                                                />
+                                            </FormControl>
+                                        </FormItem>
+                                    )}/>
                             </div>
                             <FormField
-                            control={form.control}
-                            name="name"
-                            render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>
-                                        Server Name
-                                    </FormLabel>
-                                    <FormControl>
-                                        <Input
-                                        disabled={isLoading}
-                                        className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visiable:ring-offset-0"
-                                        placeholder="Enter Server Name"
-                                        {...field}
-                                        />
-                                    </FormControl>
-                                    <FormMessage/>
-                                </FormItem>
-                            )}
+                                control={form.control}
+                                name="name"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>
+                                            Server Name
+                                        </FormLabel>
+                                        <FormControl>
+                                            <Input
+                                                disabled={isLoading}
+                                                className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visiable:ring-offset-0"
+                                                placeholder="Enter Server Name"
+                                                {...field}
+                                            />
+                                        </FormControl>
+                                        <FormMessage/>
+                                    </FormItem>
+                                )}
                             />
                         </div>
                         <DialogFooter className="bg-gray-100 px-6 py-4">
@@ -121,5 +130,5 @@ const InitialModal = () => {
         </Dialog>
     );
 }
- 
+
 export default InitialModal;
