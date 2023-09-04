@@ -74,10 +74,10 @@ const CreateServerModal = () => {
             <DialogContent className="bg-white text-black p-0 overflow-hidden">
                 <DialogHeader className="pt-8 px-6">
                     <DialogTitle className="text-2xl text-center font-bold">
-                        ㅎㅇㅎㅇㅎ
+                        서버 만들기
                     </DialogTitle>
                     <DialogDescription className="text-center text-zinc-500">
-                        어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔어쩔
+                        서버 이미지와 이름을 입력해주세요
                     </DialogDescription>
                 </DialogHeader>
                 <Form {...form}>
